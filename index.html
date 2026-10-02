@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch student promise crud(firebase)</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<div>
+    <h1>Fetch Student Promise Crud (firebase)</h1>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+            <div class="card stdCard">
+                <div class="card-body">
+                    <form id="studentForm">
+                        <div class="form-group">
+                            <label for="contactControl">Contact</label>
+                            <input type="text" class="form-control" id="contactControl">
+                        </div>
+                        <div class="form-group">
+                            <label for="emailControl">Email</label>
+                            <input type="text" class="form-control" id="emailControl">
+                        </div>
+                        <div class="form-group">
+                        <label class="fnameControl">First Name</label>
+                        <input type="text" class="form-control" id="fnameControl">
+                        </div>
+                        <div class="form-group">
+                            <label for="lnameControl">Last Name</label>
+                            <input type="text" class="form-control" id="lnameControl">
+                        </div>
+                        <button type="submit" class="btn btn-sm btn-block btn-info" id="AddStudentBtn">Add Student</button>
+                        <button type="button" class="btn btn-sm btn-block btn-danger d-none" id="UpdateStudentBtn">Update Student</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered stdTable">
+                <thead class="headings">
+                    <tr>
+                        <th>Contact</th>
+                        <th>Email</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Edit</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody id="StudentContainer">
+                    <!-- <tr>
+                        <td>GHJFHHD</td>
+                        <td>QWSEDRFGDRTYGHBJ</td>
+                        <td>GHD</td>
+                        <td>HHG</td>
+                        <td class="text-center">
+                            <button class="btn btn-sm text-primary" role="button">EDIT</button>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-sm text-danger" role="button">REMOVE</button>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="spinner d-none" id="spinner">
+    <div class="spinner-border text-dark" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+
+</div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
