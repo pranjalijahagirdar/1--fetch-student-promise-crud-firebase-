@@ -13,6 +13,14 @@ const StudentContainer = document.getElementById('StudentContainer')
 const BASE_URL = `https://crud-6b7ce-default-rtdb.firebaseio.com`
 const STUDENT_URL = `${BASE_URL}/students.json`
 
+function snackbar(msg, icon){
+    Swal .fire({
+        title:msg,
+        icon:'success',
+        timer:30000
+    })
+}
+
 function showSpinner(){
     spinner.classList.remove('d-none')
 }
@@ -122,9 +130,11 @@ function onAddStudent(eve){
                         </td>` 
         
         StudentContainer.prepend(tr)
+        snackbar('Student card added successfully !!!', 'success')
     })
     .catch(err=>{
-        snackbar(err, 'error')
+        snackbar('Failed to update card !!!', 'error')
+        cl(err)
     })
     .finally(()=>{
         hideSpinner()
@@ -213,10 +223,12 @@ function onUpdateStudent(){
                     studentForm.reset()
                     AddStudentBtn.classList.remove('d-none')
                     UpdateStudentBtn.classList.add('d-none')
+                    snackbar(`The card with ${update_Id} is updated successfully !!!`, 'success')
 
     })
     .catch(err=>{
-        snackbar(err, 'error')
+        snackbar('Failed to update card !!!', 'error')
+        cl(err)
     })
     .finally(()=>{
         hideSpinner()
@@ -261,9 +273,11 @@ function deleteStudent(ele){
             let tr = document.getElementById(removeId)
             cl(tr)
             ele.closest('tr').remove()
+            snackbar('card deleted successfully !!!', 'success')
         })
         .catch(err=>{
             snackbar(err, 'error')
+            cl(err)
         })
         .finally(()=>{
             hideSpinner()
